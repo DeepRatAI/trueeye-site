@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueEye - Tu detective digital de medios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #2b0126;
+            color: #f3f4f6;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #2b0126 0%, #4a044e 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(246, 174, 45, 0.2);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            width: 2px;
+            height: 20px;
+            background-color: #f6ae2d;
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #f6ae2d;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-[#2b0126] shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-[#f6ae2d]">TrueEye</span>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Acerca de</a>
+                        <a href="#roadmap" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Roadmap</a>
+                        <a href="#demo" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Demo</a>
+                        <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+                        <a href="#demo" class="ml-4 bg-[#f6ae2d] hover:bg-[#e69e1d] text-[#2b0126] font-bold py-2 px-4 rounded-md transition duration-300">
+                            Probar TrueEye
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-[#2b0126]">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-[#4a044e]">Acerca de</a>
+                <a href="#roadmap" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-[#4a044e]">Roadmap</a>
+                <a href="#demo" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-[#4a044e]">Demo</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-[#4a044e]">Contacto</a>
+                <a href="#demo" class="block w-full text-center bg-[#f6ae2d] text-[#2b0126] font-bold py-2 px-4 rounded-md mt-2">
+                    Probar TrueEye
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center animate-fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Tu detective digital de medios
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                    Inteligencia Artificial para analizar sesgos, audiencias e intenciones ocultas
+                </p>
+                <div class="flex justify-center">
+                    <a href="#demo" class="bg-[#f6ae2d] hover:bg-[#e69e1d] text-[#2b0126] font-bold py-3 px-8 rounded-md text-lg transition duration-300 transform hover:scale-105">
+                        Probar TrueEye
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Qué es TrueEye?</h2>
+            <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                TrueEye es un sistema inteligente de alfabetización mediática que actúa como un detective digital. Analiza contenido en línea —incluyendo noticias, artículos y redes sociales— para detectar <span class="text-[#f6ae2d] font-medium">sesgos</span>, <span class="text-[#f6ae2d] font-medium">falacias</span>, <span class="text-[#f6ae2d] font-medium">audiencias objetivo</span> e <span class="text-[#f6ae2d] font-medium">intenciones ocultas</span>, todo potenciado por agentes especializados de IA.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature 1 -->
+            <div class="feature-card bg-[#4a044e] p-6 rounded-lg shadow-lg transition duration-300 hover:border-[#f6ae2d] border border-transparent">
+                <div class="text-[#f6ae2d] text-3xl mb-4">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Detección de sesgos</h3>
+                <p class="text-gray-300">
+                    Identifica patrones de lenguaje que revelan preferencias ideológicas, omisiones estratégicas y enfoques parciales en el contenido.
+                </p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card bg-[#4a044e] p-6 rounded-lg shadow-lg transition duration-300 hover:border-[#f6ae2d] border border-transparent">
+                <div class="text-[#f6ae2d] text-3xl mb-4">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Perfilado de audiencias</h3>
+                <p class="text-gray-300">
+                    Analiza el contenido para determinar qué grupos demográficos o ideológicos son el objetivo principal del mensaje.
+                </p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card bg-[#4a044e] p-6 rounded-lg shadow-lg transition duration-300 hover:border-[#f6ae2d] border border-transparent">
+                <div class="text-[#f6ae2d] text-3xl mb-4">
+                    <i class="fas fa-user-secret"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Análisis de intencionalidad</h3>
+                <p class="text-gray-300">
+                    Detecta estrategias retóricas y marcos narrativos diseñados para influir en la percepción del lector.
+                </p>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature-card bg-[#4a044e] p-6 rounded-lg shadow-lg transition duration-300 hover:border-[#f6ae2d] border border-transparent">
+                <div class="text-[#f6ae2d] text-3xl mb-4">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Futuro: Multimodal</h3>
+                <p class="text-gray-300">
+                    Próximamente: capacidad para analizar imágenes, videos y audio, detectando manipulaciones y contenido sintético.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#4a044e]">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Actualizaciones Planificadas</h2>
+            <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                El desarrollo de TrueEye sigue un roadmap claro con funcionalidades avanzadas que se irán implementando.
+            </p>
+        </div>
+        
+        <div class="relative">
+            <!-- Timeline -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Version 1.0 -->
+                <div class="relative timeline-item text-center">
+                    <div class="bg-[#2b0126] p-6 rounded-lg shadow-lg border-t-4 border-[#f6ae2d]">
+                        <div class="text-[#f6ae2d] font-bold text-lg mb-2">✅ v1.0 (Actual)</div>
+                        <p class="text-gray-300">
+                            Analizador de contenido textual por URL con agentes especializados
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Version 2.0 -->
+                <div class="relative timeline-item text-center">
+                    <div class="bg-[#2b0126] p-6 rounded-lg shadow-lg border-t-4 border-[#f6ae2d]">
+                        <div class="text-[#f6ae2d] font-bold text-lg mb-2">🔄 v2.0 "TrueEye Chat"</div>
+                        <p class="text-gray-300">
+                            Modo conversacional con memoria persistente y análisis profundo bajo demanda
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Version 3.0 -->
+                <div class="relative timeline-item text-center">
+                    <div class="bg-[#2b0126] p-6 rounded-lg shadow-lg border-t-4 border-[#f6ae2d]">
+                        <div class="text-[#f6ae2d] font-bold text-lg mb-2">🖼️ v3.0 "TrueEye Multimodal"</div>
+                        <p class="text-gray-300">
+                            Razonamiento sobre imágenes, video y audio
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Version 4.0 -->
+                <div class="relative text-center">
+                    <div class="bg-[#2b0126] p-6 rounded-lg shadow-lg border-t-4 border-[#f6ae2d]">
+                        <div class="text-[#f6ae2d] font-bold text-lg mb-2">🧪 v4.0 "TrueEye De-Fake"</div>
+                        <p class="text-gray-300">
+                            Detección de deepfakes e identificación de contenido sintético con visión forense
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Probar TrueEye</h2>
+            <p class="text-lg text-gray-300 max-w-4xl mx-auto">
+                Podés usar la app directamente desde aquí 👇
+            </p>
+        </div>
+        
+        <div class="rounded-lg overflow-hidden shadow-xl">
+            <iframe 
+                src="https://huggingface.co/spaces/DeepRat/TrueEye_Reports" 
+                width="100%" 
+                height="800" 
+                frameborder="0"
+                allow="camera; microphone; clipboard-write; geolocation"
+                class="border-none bg-white rounded-lg">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="author" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#4a044e]">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sobre el Proyecto</h2>
+            <div class="max-w-4xl mx-auto text-lg text-gray-300">
+                <p class="mb-6">
+                    Soy Gonzalo Romero, Ingeniero en Inteligencia Artificial con certificaciones en Deep Learning, NLP y Modelos Generativos por IBM y Coursera. TrueEye representa mi compromiso con el pensamiento crítico, la transparencia y el rigor científico en el análisis de la información digital.
+                </p>
+                <p>
+                    Este proyecto fue desarrollado con Claude Opus, LangFlow y Hugging Face.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contacto y Redes Profesionales</h2>
+            <p class="text-lg text-gray-300 max-w-4xl mx-auto mb-8">
+                Visitá mi página personal para contactarme y conocer más sobre mis proyectos.
+            </p>
+            <div class="flex justify-center mb-12">
+                <a href="https://deeprat.tech" target="_blank" class="bg-[#f6ae2d] hover:bg-[#e69e1d] text-[#2b0126] font-bold py-3 px-8 rounded-md text-lg transition duration-300">
+                    Ir a deeprat.tech
+                </a>
+            </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/DeepRat" target="_blank" class="text-gray-300 hover:text-[#f6ae2d] text-2xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://huggingface.co/DeepRat" target="_blank" class="text-gray-300 hover:text-[#f6ae2d] text-2xl">
+                    <i class="fas fa-robot"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gonzaloromeroai" target="_blank" class="text-gray-300 hover:text-[#f6ae2d] text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://medium.com/@gonzaloromeroai" target="_blank" class="text-gray-300 hover:text-[#f6ae2d] text-2xl">
+                    <i class="fab fa-medium"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-[#1a0116]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2025 Gonzalo Romero · Proyecto TrueEye
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 bg-[#f6ae2d] text-[#2b0126] p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Scroll to top button
+        const scrollTopButton = document.getElementById('scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopButton.classList.remove('opacity-0', 'invisible');
+                scrollTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                scrollTopButton.classList.remove('opacity-100', 'visible');
+                scrollTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in, .feature-card, .timeline-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate-fade-in');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
